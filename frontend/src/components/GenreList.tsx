@@ -1,9 +1,23 @@
-import React from 'react'
+import { useState } from "react";
 
 const GenreList = () => {
-  return (
-    <div>GenreList</div>
-  )
-}
+  const [genres, setGenres] = useState<string[]>([
+    "Action",
+    "Comedy",
+    "Drama",
+    "Sci-Fi",
+    "Horror",
+  ]);
 
-export default GenreList
+  return (
+    <ul className="list-group">
+      {genres.map((genre, index) => (
+        <li key={index} className="list-group-item">
+          {genre}
+        </li>
+      ))}
+    </ul>
+  );
+};
+
+export default GenreList;
